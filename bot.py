@@ -15,4 +15,19 @@ async def on_ready():
     
 @bot.command()
 async def help(ctx):
+    em = discord.Embed(color=ctx.author.color, title="Community Clash Bot Help")
+    for x in bot.commands:
+        em.add_field(name=x.signature, value=x.short_doc, inline=False)
+    await ctx.send(embed=em)
     
+    
+    
+@bot.command()
+async def th9winner(ctx):
+    await ctx.send("""
+**Hall of fame th9**
+chandan|ww999 & sky09 foreverheart_eyes#4055
+""")
+    
+    
+bot.run(os.environ.get("TOKEN"))
